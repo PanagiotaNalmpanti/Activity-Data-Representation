@@ -3,8 +3,11 @@ package myproject;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class FileProcessor {
 
@@ -12,6 +15,8 @@ public class FileProcessor {
     String[] lineInfo;
     List<List<String>> dailyCaloriesList = new ArrayList<>(); //contains records [userID, date, calories]
     List<List<String>> dailyStepsList = new ArrayList<>(); //contains records [userID, date, steps]
+    List<List<String>> hourlyCaloriesList = new ArrayList<>(); //contains records [userID, date-time, calories]
+    List<List<String>> hourlyStepsList = new ArrayList<>(); //contains records [userID, date-time, steps]
 
     public void setDailyCalories(String filePath1, String filePath2) throws IOException {
         File file1 = new File(filePath1);
@@ -29,7 +34,7 @@ public class FileProcessor {
                 String calories = lineInfo[2];
 
                 //date formatting to yyyy-mm-dd
-                SimpleDateFormat input = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat input = new SimpleDateFormat("M/dd/yyyy");
                 SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
                 String date = output.format(input.parse(initialDate));
 
@@ -65,7 +70,7 @@ public class FileProcessor {
         }
     }
 
-    List<List<String>> getDailyCaloriesList(){
+    public List<List<String>> getDailyCaloriesList(){
         return dailyCaloriesList;
     }
 
@@ -85,7 +90,7 @@ public class FileProcessor {
                 String steps = lineInfo[2];
 
                 //date formatting to yyyy-mm-dd
-                SimpleDateFormat input = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat input = new SimpleDateFormat("MM/dd/yyyy");
                 SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
                 String date = output.format(input.parse(initialDate));
 
@@ -121,9 +126,72 @@ public class FileProcessor {
         }
     }
 
-    List<List<String>> getDailyStepsList(){
+    public List<List<String>> getDailyStepsList(){
         return dailyStepsList;
     }
 
+    public void setHourlyCalories(String filePath) throws IOException {
+        File file = new File(filePath);
+        InputStream inputStream = new FileInputStream(file);
+
+        //reading the file (hourlyCalories_merged.csv)
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            reader.readLine(); //skipping the first line, which contains the headers
+            while ((line = reader.readLine()) != null) {
+                lineInfo = line.split(",");
+                String userID = lineInfo[0];
+                String initialDateTime = lineInfo[1];
+                String calories = lineInfo[2];
+
+                //date-time formatting to "yyyy-mm-dd hh:mm:ss"
+                SimpleDateFormat input = new SimpleDateFormat("M/d/yyyy h:mm:ss a", Locale.ENGLISH);
+                SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+                String dateTime = output.format(input.parse(initialDateTime));
+
+                List<String> list = new ArrayList<>();
+                list.add(userID);
+                list.add(dateTime);
+                list.add(calories);
+                hourlyCaloriesList.add(list);
+            }
+        }
+        catch (IOException | ParseException e){
+            e.printStackTrace();
+        }
+    }
+
+    public List<List<String>> getHourlyCaloriesList() { return hourlyCaloriesList; }
+
+    public void setHourlySteps(String filePath) throws IOException {
+        File file = new File(filePath);
+        InputStream inputStream = new FileInputStream(file);
+
+        //reading the file (hourlySteps_merged.csv)
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            reader.readLine();
+            while ((line = reader.readLine()) != null) {
+                lineInfo = line.split(",");
+                String userID = lineInfo[0];
+                String initialDateTime = lineInfo[1];
+                String steps = lineInfo[2];
+
+                //date-time formatting to "yyyy-mm-dd hh:mm:ss"
+                SimpleDateFormat input = new SimpleDateFormat("M/d/yyyy h:mm:ss a", Locale.ENGLISH);
+                SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+                String dateTime = output.format(input.parse(initialDateTime));
+
+                List<String> list = new ArrayList<>();
+                list.add(userID);
+                list.add(dateTime);
+                list.add(steps);
+                hourlyStepsList.add(list);
+            }
+        }
+        catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<List<String>> getHourlyStepsList() { return hourlyStepsList; }
 
 }
