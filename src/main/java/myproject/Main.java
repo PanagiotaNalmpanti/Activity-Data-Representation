@@ -14,5 +14,9 @@ public class Main {
         fileProcessor.setDailySteps(filePath+"dailySteps_merged.csv", filePath+"health_fitness_dataset.csv");
         fileProcessor.setHourlyCalories(filePath+"hourlyCalories_merged.csv");
         fileProcessor.setHourlySteps(filePath+"hourlySteps_merged.csv");
+        fileProcessor.setDailyDistance((filePath+"dailyActivity_merged.csv"));
+        fileProcessor.setDailyWeight(filePath+"weightLogInfo_merged.csv", filePath+"health_fitness_dataset.csv");
+        fileProcessor.setDailySleepList(filePath+"sleepDay_merged.csv", filePath+"health_fitness_dataset.csv");
+        fileProcessor.setDailyActiveMinutes(filePath+"dailyIntensities_merged.csv", filePath+"health_fitness_dataset.csv");
     }
 }
