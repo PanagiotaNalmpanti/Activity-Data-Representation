@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="setHourlySteps &#10;setHourlyCalories">
+    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="daily: active minutes, sleep, weight, distance done">
       <change afterPath="$PROJECT_DIR$/src/main/resources/ActivityTrackingOntology.rdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dailyIntensities_merged.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/myproject/FileProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myproject/FileProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myproject/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myproject/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,13 +110,22 @@
       <option name="project" value="LOCAL" />
       <updated>1743266310551</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="daily: active minutes, sleep, weight, distance done">
+      <option name="closed" value="true" />
+      <created>1743335168162</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1743335168163</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="setDailyCalories done" />
     <MESSAGE value="setDailySteps done" />
     <MESSAGE value="setHourlySteps &#10;setHourlyCalories" />
-    <option name="LAST_COMMIT_MESSAGE" value="setHourlySteps &#10;setHourlyCalories" />
+    <MESSAGE value="daily: active minutes, sleep, weight, distance done" />
+    <option name="LAST_COMMIT_MESSAGE" value="daily: active minutes, sleep, weight, distance done" />
   </component>
 </project>

@@ -6,10 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public class FileProcessor {
 
@@ -23,10 +20,11 @@ public class FileProcessor {
 
     List<List<String>> dailyWeightList = new ArrayList<>(); //contains records [userID, date, weight in kg]
     List<List<String>> dailySleepList = new ArrayList<>(); //contains records [userID, date, sleepHours]
-    List<List<String>> dailyVeryActiveMinutes = new ArrayList<>(); //contains records [userID, date, very active minutes]
-    List<List<String>> dailyFairlyActiveMinutes = new ArrayList<>(); //contains records [userID, date, fairly active minutes]
-    List<List<String>> dailyLightlyActiveMinutes = new ArrayList<>(); //contains records [userID, date, lightly active minutes]
-    List<List<String>> dailySedentaryMinutes = new ArrayList<>(); //contains records [userID, date, sedentary minutes]
+    List<List<String>> dailyVeryActiveMinutesList = new ArrayList<>(); //contains records [userID, date, very active minutes]
+    List<List<String>> dailyFairlyActiveMinutesList = new ArrayList<>(); //contains records [userID, date, fairly active minutes]
+    List<List<String>> dailyLightlyActiveMinutesList = new ArrayList<>(); //contains records [userID, date, lightly active minutes]
+    List<List<String>> dailySedentaryMinutesList = new ArrayList<>(); //contains records [userID, date, sedentary minutes]
+    List<List<String>> dailyHeartRateList = new ArrayList<>(); //contains records [userID, date, heart rate]
 
     public void setDailyCalories(String filePath1, String filePath2) throws IOException {
         File file1 = new File(filePath1);
@@ -327,10 +325,10 @@ public class FileProcessor {
                 SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
                 String date = output.format(input.parse(initialDate));
 
-                dailyVeryActiveMinutes.add(Arrays.asList(userID, date, veryActiveMinutes));
-                dailyFairlyActiveMinutes.add(Arrays.asList(userID, date, fairlyActiveMinutes));
-                dailyLightlyActiveMinutes.add(Arrays.asList(userID, date, lightlyActiveMinutes));
-                dailySedentaryMinutes.add(Arrays.asList(userID, date, sedentaryMinutes));
+                dailyVeryActiveMinutesList.add(Arrays.asList(userID, date, veryActiveMinutes));
+                dailyFairlyActiveMinutesList.add(Arrays.asList(userID, date, fairlyActiveMinutes));
+                dailyLightlyActiveMinutesList.add(Arrays.asList(userID, date, lightlyActiveMinutes));
+                dailySedentaryMinutesList.add(Arrays.asList(userID, date, sedentaryMinutes));
             }
         }
         catch (IOException | ParseException e) {
@@ -348,13 +346,13 @@ public class FileProcessor {
                 String activeMinutes = lineInfo[7];
 
                 if (intensity.equals("Low")) {
-                    dailyLightlyActiveMinutes.add(Arrays.asList(userID, date, activeMinutes));
+                    dailyLightlyActiveMinutesList.add(Arrays.asList(userID, date, activeMinutes));
                 }
                 else if (intensity.equals("Medium")) {
-                    dailyFairlyActiveMinutes.add(Arrays.asList(userID, date, activeMinutes));
+                    dailyFairlyActiveMinutesList.add(Arrays.asList(userID, date, activeMinutes));
                 }
                 else if (intensity.equals("High")) {
-                    dailyVeryActiveMinutes.add(Arrays.asList(userID, date, activeMinutes));
+                    dailyVeryActiveMinutesList.add(Arrays.asList(userID, date, activeMinutes));
                 }
             }
         }
@@ -363,8 +361,85 @@ public class FileProcessor {
         }
     }
 
-    public List<List<String>> getDailyVeryActiveMinutes() { return dailyVeryActiveMinutes; }
-    public List<List<String>> getDailyFairlyActiveMinutes() { return dailyFairlyActiveMinutes; }
-    public List<List<String>> getDailyLightlyActiveMinutes() { return dailyLightlyActiveMinutes; }
-    public List<List<String>> getDailySedentaryMinutes() { return dailySedentaryMinutes; }
+    public List<List<String>> getDailyVeryActiveMinutes() { return dailyVeryActiveMinutesList; }
+    public List<List<String>> getDailyFairlyActiveMinutes() { return dailyFairlyActiveMinutesList; }
+    public List<List<String>> getDailyLightlyActiveMinutes() { return dailyLightlyActiveMinutesList; }
+    public List<List<String>> getDailySedentaryMinutes() { return dailySedentaryMinutesList; }
+
+    public void setDailyHeartRate(String filePath1, String filePath2) throws IOException {
+        File file1 = new File(filePath1);
+        File file2 = new File(filePath2);
+        InputStream inputStream1 = new FileInputStream(file1);
+        InputStream inputStream2 = new FileInputStream(file2);
+
+        //reading the first file (heartrate_seconds_merged.csv)
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream1))) {
+            reader.readLine();
+            Map<String, List<Integer>> groupingList = new HashMap<>();
+            while((line = reader.readLine()) != null) {
+                lineInfo = line.split(",");
+                String userID = lineInfo[0];
+                String[] initialDateTime = lineInfo[1].split(",");
+                String initialDate = initialDateTime[0];
+                Integer heartRateBySecond = Integer.parseInt(lineInfo[2]);
+
+                //date formatting to "yyyy-mm-dd"
+                SimpleDateFormat input = new SimpleDateFormat("M/d/yyyy");
+                SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
+                String date = output.format(input.parse(initialDate));
+
+                //Mapping the heartRates to group them by userID and date
+                List<Integer> heartRateList = new ArrayList<>();
+                String key = userID + "_" + date;
+                if (groupingList.containsKey(key)) {
+                    heartRateList = groupingList.get(key);
+                    heartRateList.add(heartRateBySecond);
+                }
+                else {
+                    heartRateList = new ArrayList<>();
+                    heartRateList.add(heartRateBySecond);
+                    groupingList.put(key, heartRateList);
+                }
+            }
+
+            for (Map.Entry<String, List<Integer>> entry: groupingList.entrySet()) {
+                List<Integer> heartRateList = entry.getValue();
+
+                //avg computation
+                Iterator<Integer> iterator = heartRateList.iterator();
+                double sum = 0;
+                int num = 0;
+                while (iterator.hasNext()) {
+                    sum += iterator.next();
+                    num++;
+                }
+                double avgHR = (num>0) ? (sum/num) : 0.0;
+                String heartRate = String.format(Locale.ENGLISH, "%.1f", avgHR);
+                String[] userDate = entry.getKey().split("_");
+                String userID = userDate[0];
+                String date = userDate[1];
+
+                dailyHeartRateList.add(Arrays.asList(userID, date, heartRate));
+            }
+        }
+        catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+
+        //reading the second file (health_fitness_dataset.csv)
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream2))) {
+            reader.readLine();
+            while ((line = reader.readLine()) != null) {
+                lineInfo = line.split(",");
+                String userID = lineInfo[0];
+                String date = lineInfo[1];
+                String heartRate = lineInfo[16];
+
+                dailyHeartRateList.add(Arrays.asList(userID, date, heartRate));
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -18,5 +18,6 @@ public class Main {
         fileProcessor.setDailyWeight(filePath+"weightLogInfo_merged.csv", filePath+"health_fitness_dataset.csv");
         fileProcessor.setDailySleepList(filePath+"sleepDay_merged.csv", filePath+"health_fitness_dataset.csv");
         fileProcessor.setDailyActiveMinutes(filePath+"dailyIntensities_merged.csv", filePath+"health_fitness_dataset.csv");
+        fileProcessor.setDailyHeartRate(filePath+"heartrate_seconds_merged.csv", filePath+"health_fitness_dataset.csv");
     }
 }
