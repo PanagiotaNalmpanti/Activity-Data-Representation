@@ -17,7 +17,6 @@ public class FileProcessor {
     List<List<String>> hourlyCaloriesList = new ArrayList<>(); //contains records [userID, date-time, calories]
     List<List<String>> hourlyStepsList = new ArrayList<>(); //contains records [userID, date-time, steps]
     List<List<String>> dailyDistanceList = new ArrayList<>(); //contains records [userID, date, distance]
-
     List<List<String>> dailyWeightList = new ArrayList<>(); //contains records [userID, date, weight in kg]
     List<List<String>> dailySleepList = new ArrayList<>(); //contains records [userID, date, sleepHours]
     List<List<String>> dailyVeryActiveMinutesList = new ArrayList<>(); //contains records [userID, date, very active minutes]
@@ -52,7 +51,6 @@ public class FileProcessor {
         catch (IOException | ParseException e) {
             e.printStackTrace();
         }
-
         //reading the second file (health_fitness_dataset.csv)
         try(BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream2))) {
             reader.readLine(); //skipping the first line, which contains the headers

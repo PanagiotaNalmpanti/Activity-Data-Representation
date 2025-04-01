@@ -1,0 +1,217 @@
+@prefix : <http://www.semanticweb.org/ActivityTrackingOntology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa#> .
+@prefix act: <http://www.semanticweb.org/ActivityTrackingOntology#> .
+@base <http://www.semanticweb.org/ActivityTrackingOntology/> .
+
+<http://www.semanticweb.org/ActivityTrackingOntology> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/ns/sosa#hasFeatureOfInterest
+<http://www.w3.org/ns/sosa#hasFeatureOfInterest> rdf:type owl:ObjectProperty ;
+                                                 owl:inverseOf <http://www.w3.org/ns/sosa#isFeatureOfInterestOf> .
+
+
+###  http://www.w3.org/ns/sosa#isFeatureOfInterestOf
+<http://www.w3.org/ns/sosa#isFeatureOfInterestOf> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://www.w3.org/ns/sosa#FeatureOfInterest> ;
+                                                  rdfs:range <http://www.w3.org/ns/sosa#Observation> .
+
+
+###  http://www.w3.org/ns/sosa#madeBySensor
+<http://www.w3.org/ns/sosa#madeBySensor> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <http://www.w3.org/ns/sosa#Observation> ;
+                                         rdfs:range <http://www.w3.org/ns/sosa#Sensor> .
+
+
+###  http://www.w3.org/ns/sosa#observedProperty
+<http://www.w3.org/ns/sosa#observedProperty> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain <http://www.w3.org/ns/sosa#Observation> ;
+                                             rdfs:range <http://www.w3.org/ns/sosa#ObservableProperty> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#hasCount
+<http://www.semanticweb.org/ActivityTrackingOntology/act#hasCount> rdf:type owl:DatatypeProperty ;
+                                                                   rdfs:domain <http://www.w3.org/ns/sosa#Observation> .
+
+
+###  http://www.w3.org/ns/sosa#resultTime
+<http://www.w3.org/ns/sosa#resultTime> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <http://www.w3.org/ns/sosa#Observation> ;
+                                       rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://activity.org/act#ActiveMinutes
+<http://activity.org/act#ActiveMinutes> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://www.semanticweb.org/ActivityTrackingOntology/act#DailyObservation> .
+
+
+###  http://activity.org/act#DCalories
+<http://activity.org/act#DCalories> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.semanticweb.org/ActivityTrackingOntology/act#DailyObservation> .
+
+
+###  http://activity.org/act#FairlyActiveMinutes
+<http://activity.org/act#FairlyActiveMinutes> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://activity.org/act#ActiveMinutes> .
+
+
+###  http://activity.org/act#LightlyActiveMinutes
+<http://activity.org/act#LightlyActiveMinutes> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://activity.org/act#ActiveMinutes> .
+
+
+###  http://activity.org/act#SedentaryMinutes
+<http://activity.org/act#SedentaryMinutes> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://activity.org/act#ActiveMinutes> .
+
+
+###  http://activity.org/act#VeryActiveMinutes
+<http://activity.org/act#VeryActiveMinutes> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://activity.org/act#ActiveMinutes> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#ActiveMinutesProp
+<http://www.semanticweb.org/ActivityTrackingOntology/act#ActiveMinutesProp> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://www.w3.org/ns/sosa#ObservableProperty> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#CaloriesProp
+<http://www.semanticweb.org/ActivityTrackingOntology/act#CaloriesProp> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.w3.org/ns/sosa#ObservableProperty> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#DSteps
+<http://www.semanticweb.org/ActivityTrackingOntology/act#DSteps> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/ActivityTrackingOntology/act#DailyObservation> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#DailyObservation
+<http://www.semanticweb.org/ActivityTrackingOntology/act#DailyObservation> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://www.w3.org/ns/sosa#Observation> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#Distance
+<http://www.semanticweb.org/ActivityTrackingOntology/act#Distance> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.semanticweb.org/ActivityTrackingOntology/act#DailyObservation> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#DistanceProp
+<http://www.semanticweb.org/ActivityTrackingOntology/act#DistanceProp> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.w3.org/ns/sosa#ObservableProperty> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#HCalories
+<http://www.semanticweb.org/ActivityTrackingOntology/act#HCalories> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.semanticweb.org/ActivityTrackingOntology/act#HourlyObservation> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#HSteps
+<http://www.semanticweb.org/ActivityTrackingOntology/act#HSteps> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/ActivityTrackingOntology/act#HourlyObservation> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#HeartRate
+<http://www.semanticweb.org/ActivityTrackingOntology/act#HeartRate> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.semanticweb.org/ActivityTrackingOntology/act#DailyObservation> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#HeartRateProp
+<http://www.semanticweb.org/ActivityTrackingOntology/act#HeartRateProp> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.w3.org/ns/sosa#ObservableProperty> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#HourlyObservation
+<http://www.semanticweb.org/ActivityTrackingOntology/act#HourlyObservation> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://www.w3.org/ns/sosa#Observation> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#MinutesAsleep
+<http://www.semanticweb.org/ActivityTrackingOntology/act#MinutesAsleep> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.semanticweb.org/ActivityTrackingOntology/act#Sleep> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#Person
+<http://www.semanticweb.org/ActivityTrackingOntology/act#Person> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.w3.org/ns/sosa#FeatureOfInterest> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#Sleep
+<http://www.semanticweb.org/ActivityTrackingOntology/act#Sleep> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.semanticweb.org/ActivityTrackingOntology/act#DailyObservation> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#SleepProp
+<http://www.semanticweb.org/ActivityTrackingOntology/act#SleepProp> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.w3.org/ns/sosa#ObservableProperty> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#StepsProp
+<http://www.semanticweb.org/ActivityTrackingOntology/act#StepsProp> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.w3.org/ns/sosa#ObservableProperty> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#TimeInBed
+<http://www.semanticweb.org/ActivityTrackingOntology/act#TimeInBed> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.semanticweb.org/ActivityTrackingOntology/act#Sleep> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#UserID
+<http://www.semanticweb.org/ActivityTrackingOntology/act#UserID> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/ActivityTrackingOntology/act#Person> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#Weight
+<http://www.semanticweb.org/ActivityTrackingOntology/act#Weight> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/ActivityTrackingOntology/act#DailyObservation> .
+
+
+###  http://www.semanticweb.org/ActivityTrackingOntology/act#WeightProp
+<http://www.semanticweb.org/ActivityTrackingOntology/act#WeightProp> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.w3.org/ns/sosa#ObservableProperty> .
+
+
+###  http://www.w3.org/ns/sosa#FeatureOfInterest
+<http://www.w3.org/ns/sosa#FeatureOfInterest> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa#ObservableProperty
+<http://www.w3.org/ns/sosa#ObservableProperty> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa#Observation
+<http://www.w3.org/ns/sosa#Observation> rdf:type owl:Class ;
+                                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://www.w3.org/ns/sosa#hasFeatureOfInterest> ;
+                                                              owl:allValuesFrom <http://www.w3.org/ns/sosa#FeatureOfInterest>
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://www.w3.org/ns/sosa#madeBySensor> ;
+                                                              owl:allValuesFrom <http://www.w3.org/ns/sosa#Sensor>
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://www.w3.org/ns/sosa#observedProperty> ;
+                                                              owl:allValuesFrom <http://www.w3.org/ns/sosa#ObservableProperty>
+                                                            ] .
+
+
+###  http://www.w3.org/ns/sosa#Sensor
+<http://www.w3.org/ns/sosa#Sensor> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
