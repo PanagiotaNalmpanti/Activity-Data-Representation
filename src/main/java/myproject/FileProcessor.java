@@ -21,6 +21,7 @@ public class FileProcessor {
     List<List<String>> dailyLightlyActiveMinutesList = new ArrayList<>(); //contains records [userID, date, lightly active minutes]
     List<List<String>> dailySedentaryMinutesList = new ArrayList<>(); //contains records [userID, date, sedentary minutes]
     List<List<String>> dailyHeartRateList = new ArrayList<>(); //contains records [userID, date, heart rate]
+    Set<String> declaredIDs = new HashSet<>();
 
     public void setDailyCalories(String filePath1, String filePath2) throws IOException {
         File file1 = new File(filePath1);
@@ -43,6 +44,12 @@ public class FileProcessor {
                 String date = output.format(input.parse(initialDate));
 
                 dailyCaloriesList.add(Arrays.asList(userID, date, calories));
+
+                //keeping the users' ID in a Set
+                //to load them later on GraphDB (DataBaseCreator)
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException | ParseException e) {
@@ -58,6 +65,10 @@ public class FileProcessor {
                 String calories = lineInfo[9];
 
                 dailyCaloriesList.add(Arrays.asList(userID, date, calories));
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException e) {
@@ -90,6 +101,10 @@ public class FileProcessor {
                 String date = output.format(input.parse(initialDate));
 
                 dailyStepsList.add(Arrays.asList(userID, date, steps));
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException | ParseException e) {
@@ -106,6 +121,10 @@ public class FileProcessor {
                 String steps = lineInfo[13];
 
                 dailyStepsList.add(Arrays.asList(userID, date, steps));
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException e) {
@@ -136,6 +155,10 @@ public class FileProcessor {
                 String dateTime = output.format(input.parse(initialDateTime));
 
                 hourlyCaloriesList.add(Arrays.asList(userID, dateTime, calories));
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException | ParseException e){
@@ -164,6 +187,10 @@ public class FileProcessor {
                 String dateTime = output.format(input.parse(initialDateTime));
 
                 hourlyStepsList.add(Arrays.asList(userID, dateTime, steps));
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException | ParseException e) {
@@ -192,6 +219,10 @@ public class FileProcessor {
                 String date = output.format(input.parse(initialDate));
 
                 dailyDistanceList.add(Arrays.asList(userID, date, distance));
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException | ParseException e) {
@@ -224,6 +255,10 @@ public class FileProcessor {
                 String date = output.format(input.parse(initialDate));
 
                 dailyWeightList.add(Arrays.asList(userID, date, weight));
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException | ParseException e) {
@@ -240,6 +275,10 @@ public class FileProcessor {
                 String weight = String.format(Locale.ENGLISH, "%.2f", Double.parseDouble(lineInfo[5]));
 
                 dailyWeightList.add(Arrays.asList(userID, date, weight));
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException e) {
@@ -272,6 +311,10 @@ public class FileProcessor {
                 String date = output.format(input.parse(initialDate));
 
                 dailySleepList.add(Arrays.asList(userID, date, sleepHours));
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException | ParseException e) {
@@ -288,6 +331,10 @@ public class FileProcessor {
                 String sleepHours = lineInfo[11];
 
                 dailySleepList.add(Arrays.asList(userID, date, sleepHours));
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException e) {
@@ -324,6 +371,10 @@ public class FileProcessor {
                 dailyFairlyActiveMinutesList.add(Arrays.asList(userID, date, fairlyActiveMinutes));
                 dailyLightlyActiveMinutesList.add(Arrays.asList(userID, date, lightlyActiveMinutes));
                 dailySedentaryMinutesList.add(Arrays.asList(userID, date, sedentaryMinutes));
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException | ParseException e) {
@@ -348,6 +399,10 @@ public class FileProcessor {
                 }
                 else if (intensity.equals("High")) {
                     dailyVeryActiveMinutesList.add(Arrays.asList(userID, date, activeMinutes));
+                }
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
                 }
             }
         }
@@ -415,6 +470,10 @@ public class FileProcessor {
                 String date = userDate[1];
 
                 dailyHeartRateList.add(Arrays.asList(userID, date, heartRate));
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException | ParseException e) {
@@ -431,10 +490,18 @@ public class FileProcessor {
                 String heartRate = lineInfo[16];
 
                 dailyHeartRateList.add(Arrays.asList(userID, date, heartRate));
+
+                if (!declaredIDs.contains(userID)) {
+                    declaredIDs.add(userID);
+                }
             }
         }
         catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    public List<List<String>> getDailyHeartRate() { return dailyHeartRateList; }
+
+    public Set<String> getDeclaredIDs() { return declaredIDs; }
 }
