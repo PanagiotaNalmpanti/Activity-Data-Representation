@@ -2,6 +2,7 @@ package myproject;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.List;
 
 public class Main {
 
@@ -19,5 +20,13 @@ public class Main {
         fileProcessor.setDailySleep(filePath+"sleepDay_merged.csv", filePath+"health_fitness_dataset.csv");
         fileProcessor.setDailyActiveMinutes(filePath+"dailyIntensities_merged.csv", filePath+"health_fitness_dataset.csv");
         fileProcessor.setDailyHeartRate(filePath+"heartrate_seconds_merged.csv", filePath+"health_fitness_dataset.csv");
+
+        DataBaseCreator dbCreator = new DataBaseCreator();
+        dbCreator.graphDBConnection();
+        List<List<String>> dailyCaloriesList = fileProcessor.getDailyCaloriesList();
+        List<List<String>> dailyStepsList = fileProcessor.getDailyStepsList();
+
+        //dbCreator.loadDailyCalories(dailyCaloriesList);
+        dbCreator.loadDailySteps(dailyStepsList);
     }
 }
