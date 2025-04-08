@@ -165,7 +165,7 @@ public class DataBaseCreator {
             IRI userID = Values.iri(act+list.get(0));
             String date = list.get(1);
             float distanceCount = Float.parseFloat(list.get(2));
-            IRI distanceID = Values.iri(DSteps+"ID_"+list.get(0)+"_"+list.get(1));
+            IRI distanceID = Values.iri(Distance+"ID_"+list.get(0)+"_"+list.get(1));
 
             model.add(distanceID, RDF.TYPE, Distance);
             model.add(userID, isFeatureOfInterestOf, distanceID);
@@ -185,7 +185,7 @@ public class DataBaseCreator {
             IRI userID = Values.iri(act+list.get(0));
             String date = list.get(1);
             float weightCount = Float.parseFloat(list.get(2));
-            IRI weightID = Values.iri(DSteps+"ID_"+list.get(0)+"_"+list.get(1));
+            IRI weightID = Values.iri(Weight+"ID_"+list.get(0)+"_"+list.get(1));
 
             model.add(weightID, RDF.TYPE, Weight);
             model.add(userID, isFeatureOfInterestOf, weightID);
@@ -205,7 +205,7 @@ public class DataBaseCreator {
             IRI userID = Values.iri(act+list.get(0));
             String date = list.get(1);
             float sleepCount = Float.parseFloat(list.get(2));
-            IRI sleepID = Values.iri(DSteps+"ID_"+list.get(0)+"_"+list.get(1));
+            IRI sleepID = Values.iri(SleepHours+"ID_"+list.get(0)+"_"+list.get(1));
 
             model.add(sleepID, RDF.TYPE, SleepHours);
             model.add(userID, isFeatureOfInterestOf, sleepID);
@@ -225,7 +225,7 @@ public class DataBaseCreator {
             IRI userID = Values.iri(act+list.get(0));
             String date = list.get(1);
             float heartRateCount = Float.parseFloat(list.get(2));
-            IRI heartRateID = Values.iri(DSteps+"ID_"+list.get(0)+"_"+list.get(1));
+            IRI heartRateID = Values.iri(HeartRate+"ID_"+list.get(0)+"_"+list.get(1));
 
             model.add(heartRateID, RDF.TYPE, HeartRate);
             model.add(userID, isFeatureOfInterestOf, heartRateID);
@@ -245,7 +245,7 @@ public class DataBaseCreator {
             IRI userID = Values.iri(act+list.get(0));
             String date = list.get(1);
             int VAMinutesCount = Integer.parseInt(list.get(2));
-            IRI VAMinutesID = Values.iri(DSteps+"ID_"+list.get(0)+"_"+list.get(1));
+            IRI VAMinutesID = Values.iri(VeryActiveMinutes+"ID_"+list.get(0)+"_"+list.get(1));
 
             model.add(VAMinutesID, RDF.TYPE, VeryActiveMinutes);
             model.add(userID, isFeatureOfInterestOf, VAMinutesID);
@@ -265,7 +265,7 @@ public class DataBaseCreator {
             IRI userID = Values.iri(act+list.get(0));
             String date = list.get(1);
             int FAMinutesCount = Integer.parseInt(list.get(2));
-            IRI FAMinutesID = Values.iri(DSteps+"ID_"+list.get(0)+"_"+list.get(1));
+            IRI FAMinutesID = Values.iri(FairlyActiveMinutes+"ID_"+list.get(0)+"_"+list.get(1));
 
             model.add(FAMinutesID, RDF.TYPE, FairlyActiveMinutes);
             model.add(userID, isFeatureOfInterestOf, FAMinutesID);
@@ -285,7 +285,7 @@ public class DataBaseCreator {
             IRI userID = Values.iri(act+list.get(0));
             String date = list.get(1);
             int LAMinutesCount = Integer.parseInt(list.get(2));
-            IRI LAMinutesID = Values.iri(DSteps+"ID_"+list.get(0)+"_"+list.get(1));
+            IRI LAMinutesID = Values.iri(LightlyActiveMinutes+"ID_"+list.get(0)+"_"+list.get(1));
 
             model.add(LAMinutesID, RDF.TYPE, LightlyActiveMinutes);
             model.add(userID, isFeatureOfInterestOf, LAMinutesID);
@@ -305,7 +305,7 @@ public class DataBaseCreator {
             IRI userID = Values.iri(act+list.get(0));
             String date = list.get(1);
             int SedentaryMinutesCount = Integer.parseInt(list.get(2));
-            IRI SedentaryMinutesID = Values.iri(DSteps+"ID_"+list.get(0)+"_"+list.get(1));
+            IRI SedentaryMinutesID = Values.iri(SedentaryMinutes+"ID_"+list.get(0)+"_"+list.get(1));
 
             model.add(SedentaryMinutesID, RDF.TYPE, SedentaryMinutes);
             model.add(userID, isFeatureOfInterestOf, SedentaryMinutesID);
@@ -325,7 +325,7 @@ public class DataBaseCreator {
             IRI userID = Values.iri(act+list.get(0));
             String dateTime = list.get(1);
             int caloriesCount = Integer.parseInt(list.get(2));
-            IRI caloriesID = Values.iri(DSteps+"ID_"+list.get(0)+"_"+list.get(1));
+            IRI caloriesID = Values.iri(HCalories+"ID_"+list.get(0)+"_"+list.get(1));
 
             model.add(caloriesID, RDF.TYPE, HCalories);
             model.add(userID, isFeatureOfInterestOf, caloriesID);
@@ -345,7 +345,7 @@ public class DataBaseCreator {
             IRI userID = Values.iri(act+list.get(0));
             String dateTime = list.get(1);
             int stepsCount = Integer.parseInt(list.get(2));
-            IRI stepsID = Values.iri(DSteps+"ID_"+list.get(0)+"_"+list.get(1));
+            IRI stepsID = Values.iri(HSteps+"ID_"+list.get(0)+"_"+list.get(1));
 
             model.add(stepsID, RDF.TYPE, HSteps);
             model.add(userID, isFeatureOfInterestOf, stepsID);
