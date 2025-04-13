@@ -55,13 +55,15 @@ public class DataBaseCreator {
     public void graphDBConnection(FileProcessor fileProcessor) throws IOException {
         repository = new HTTPRepository("http://localhost:7200/repositories/" + repositoryName);
         repository.init();
+
         try (RepositoryConnection connection = repository.getConnection()){
+            connection.clear();
+            connection.begin();
             File file = new File("src/main/resources/ActivityTrackingOntology.ttl");
             try (InputStream inputStream = new FileInputStream(file)) {
                 connection.add(inputStream, "", RDFFormat.TURTLE);
             }
-
-            connection.clear();
+            connection.commit();
             loadData(fileProcessor, connection);
         }
         catch (IOException | RepositoryException e) {

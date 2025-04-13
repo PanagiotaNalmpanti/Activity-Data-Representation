@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="corrections">
-      <change afterPath="$PROJECT_DIR$/src/main/java/myproject/ShaclValidation.java" afterDir="false" />
+    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="building shacl validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myproject/DataBaseCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myproject/DataBaseCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myproject/ShaclValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myproject/ShaclValidation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744117413345</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="building shacl validation">
+      <option name="closed" value="true" />
+      <created>1744197276988</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1744197276988</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -183,6 +191,7 @@
     <MESSAGE value="load daily steps done" />
     <MESSAGE value="all loaded on GraphDB" />
     <MESSAGE value="corrections" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrections" />
+    <MESSAGE value="building shacl validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="building shacl validation" />
   </component>
 </project>

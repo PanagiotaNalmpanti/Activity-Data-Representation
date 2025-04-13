@@ -23,7 +23,52 @@ public class ShaclValidation {
         try (SailRepositoryConnection connection = repository.getConnection()) {
             StringReader shaclRules = new StringReader(
               String.join("\n", "",
-                      //shacl rules
+                      //PREFIXES
+                      "@prefix act: <http://www.semanticweb.org/ActivityTrackingOntology#> .",
+                      "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .",
+                      "@prefix sosa: <http://www.w3.org/ns/sosa#> .",
+                      "@prefix sh: <http://www.w3.org/ns/shacl#> .",
+
+                      //RULE 1
+                      "act:ObservationUserShape",
+                      "     a sh:NodeShape ;",
+                      "     sh:targetClass sosa:Observation ;",
+                      "     sh:property [ sh:path sosa:hasFeatureOfInterest ;",
+                      "                   sh:minCount 1; sh:maxCount 1; ] .",
+
+                      //RULE 2
+                      "act:HourlyObservationShape",
+                      "     a sh:NodeShape ;",
+                      "     sh:targetClass sosa:Observation ;",
+                      "     sh:property [ sh:path sosa:resultTime ;",
+                      "                   sh:datatype xsd:dateTime ; ] .",
+
+                      //RULE 3
+                      "act:ObservationResultTimeShape",
+                      "     a sh:NodeShape ;",
+                      "     sh:targetClass sosa:Observation ;",
+                      "     sh:property [ sh:path sosa:resultTime ;",
+                      "                   sh:minCount 1; sh:maxCount 1; ] .",
+
+                      //RULE 4
+                      "act:HasCountShape",
+                      "     a sh:NodeShape ;",
+                      "     sh:targetClass sosa:Observation ;",
+                      "     sh:property [ sh:path sosa:hasCount ;",
+                      "                   sh:minInclusive 0; sh:minCount 1; sh:maxCount 1; ] .",
+
+                      //RULE 5
+                      "act:ObservedPropertiesShape",
+                      "     a sh:NodeShape ;",
+                      "     sh:targetClass sosa:Observation ;",
+                      "     sh:property [ sh:path sosa:observedProperty ;",
+                      "                   sh:or ( [ sh:class act:ActiveMinutesProp; ] ",
+                      "                           [ sh:class act:CaloriesProp; ]",
+                      "                           [ sh:class act:DistanceProp; ]",
+                      "                           [ sh:class act:HeartRateProp; ]",
+                      "                           [ sh:class act:SleepProp; ]",
+                      "                           [ sh:class act:StepsProp; ]",
+                      "                           [ sh:class act:WeightProp; ] ) ] ."
               )
             );
 
