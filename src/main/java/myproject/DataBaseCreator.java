@@ -18,6 +18,7 @@ import java.util.*;
 public class DataBaseCreator {
     String repositoryName = "ActivityTrackingOntology";
     HTTPRepository repository;
+    ShaclValidation shaclValidation;
     String act = "http://www.semanticweb.org/ActivityTrackingOntology#";
     String sosa = "http://www.w3.org/ns/sosa#";
 
@@ -86,6 +87,8 @@ public class DataBaseCreator {
         List<List<String>> hourlyStepsList = fileProcessor.getHourlyStepsList();
         Set<String> declaredIDs = fileProcessor.getDeclaredIDs();
 
+        shaclValidation = new ShaclValidation();
+
         //loading general data
         Model model = new TreeModel();
         model.add(ActivityTracker, RDF.TYPE, Sensor);
@@ -94,33 +97,36 @@ public class DataBaseCreator {
         connection.commit();
 
         //loading specific data
-        loadUserIDs(declaredIDs, connection);
-        loadDailyCalories(dailyCaloriesList, connection);
-        loadDailySteps(dailyStepsList, connection);
-        loadDailyDistance(dailyDistanceList, connection);
-        loadDailyWeight(dailyWeightList, connection);
-        loadDailySleep(dailySleepList, connection);
-        loadDailyHeartRate(dailyHeartRateList, connection);
-        loadDailyVeryActiveMinutes(dailyVeryActiveMinutesList, connection);
-        loadDailyFairlyActiveMinutes(dailyFairlyActiveMinutesList, connection);
-        loadDailyLightlyActiveMinutes(dailyLightlyActiveMinutesList, connection);
-        loadDailySedentaryMinutes(dailySedentaryMinutesList, connection);
-        loadHourlyCalories(hourlyCaloriesList, connection);
-        loadHourlySteps(hourlyStepsList, connection);
+        loadUserIDs(declaredIDs, connection, shaclValidation);
+        loadDailyCalories(dailyCaloriesList, connection, shaclValidation);
+        loadDailySteps(dailyStepsList, connection, shaclValidation);
+        loadDailyDistance(dailyDistanceList, connection, shaclValidation);
+        loadDailyWeight(dailyWeightList, connection, shaclValidation);
+        loadDailySleep(dailySleepList, connection, shaclValidation);
+        loadDailyHeartRate(dailyHeartRateList, connection, shaclValidation);
+        loadDailyVeryActiveMinutes(dailyVeryActiveMinutesList, connection, shaclValidation);
+        loadDailyFairlyActiveMinutes(dailyFairlyActiveMinutesList, connection, shaclValidation);
+        loadDailyLightlyActiveMinutes(dailyLightlyActiveMinutesList, connection, shaclValidation);
+        loadDailySedentaryMinutes(dailySedentaryMinutesList, connection, shaclValidation);
+        loadHourlyCalories(hourlyCaloriesList, connection, shaclValidation);
+        loadHourlySteps(hourlyStepsList, connection, shaclValidation);
     }
 
-    public void loadUserIDs (Set<String> declaredIDs, RepositoryConnection connection) {
+    public void loadUserIDs (Set<String> declaredIDs, RepositoryConnection connection, ShaclValidation shaclValidation) {
         Model model = new TreeModel();
         for (String u: declaredIDs) {
             IRI userID = Values.iri(act+u);
             model.add(userID, RDF.TYPE, UserID);
         }
+        shaclValidation.validation(model);
+
         connection.begin();
         connection.add(model);
         connection.commit();
+        System.out.println("UserID committed");
     }
 
-    public void loadDailyCalories(List<List<String>> dailyCaloriesList, RepositoryConnection connection) {
+    public void loadDailyCalories(List<List<String>> dailyCaloriesList, RepositoryConnection connection, ShaclValidation shaclValidation) {
         Model model = new TreeModel();
 
         for (List<String> list: dailyCaloriesList) { //list: [userID, date, calories]
@@ -135,12 +141,15 @@ public class DataBaseCreator {
             model.add(caloriesID, hasCount, Values.literal(caloriesCount));
             model.add(caloriesID, resultTime, Values.literal(date, Values.iri("http://www.w3.org/2001/XMLSchema#date")));
         }
+        shaclValidation.validation(model);
+
         connection.begin();
         connection.add(model);
         connection.commit();
+        System.out.println("DailyCalories committed");
     }
 
-    public void loadDailySteps(List<List<String>> dailyStepsList, RepositoryConnection connection) {
+    public void loadDailySteps(List<List<String>> dailyStepsList, RepositoryConnection connection, ShaclValidation shaclValidation) {
         Model model = new TreeModel();
 
         for (List<String> list: dailyStepsList) { //list: [userID, date, steps]
@@ -155,12 +164,15 @@ public class DataBaseCreator {
             model.add(stepsID, hasCount, Values.literal(stepsCount));
             model.add(stepsID, resultTime, Values.literal(date, Values.iri("http://www.w3.org/2001/XMLSchema#date")));
         }
+        shaclValidation.validation(model);
+
         connection.begin();
         connection.add(model);
         connection.commit();
+        System.out.println("DailySteps committed");
     }
 
-    public void loadDailyDistance(List<List<String>> dailyDistanceList, RepositoryConnection connection) {
+    public void loadDailyDistance(List<List<String>> dailyDistanceList, RepositoryConnection connection, ShaclValidation shaclValidation) {
         Model model = new TreeModel();
 
         for (List<String> list: dailyDistanceList) { //list: [userID, date, distance]
@@ -175,12 +187,15 @@ public class DataBaseCreator {
             model.add(distanceID, hasCount, Values.literal(distanceCount));
             model.add(distanceID, resultTime, Values.literal(date, Values.iri("http://www.w3.org/2001/XMLSchema#date")));
         }
+        shaclValidation.validation(model);
+
         connection.begin();
         connection.add(model);
         connection.commit();
+        System.out.println("DailyDistance committed");
     }
 
-    public void loadDailyWeight(List<List<String>> dailyWeightList, RepositoryConnection connection) {
+    public void loadDailyWeight(List<List<String>> dailyWeightList, RepositoryConnection connection, ShaclValidation shaclValidation) {
         Model model = new TreeModel();
 
         for (List<String> list: dailyWeightList) { //list: [userID, date, weight]
@@ -195,12 +210,15 @@ public class DataBaseCreator {
             model.add(weightID, hasCount, Values.literal(weightCount));
             model.add(weightID, resultTime, Values.literal(date, Values.iri("http://www.w3.org/2001/XMLSchema#date")));
         }
+        shaclValidation.validation(model);
+
         connection.begin();
         connection.add(model);
         connection.commit();
+        System.out.println("DailyWeight committed");
     }
 
-    public void loadDailySleep(List<List<String>> dailySleepList, RepositoryConnection connection) {
+    public void loadDailySleep(List<List<String>> dailySleepList, RepositoryConnection connection, ShaclValidation shaclValidation) {
         Model model = new TreeModel();
 
         for (List<String> list: dailySleepList) { //list: [userID, date, sleepHours]
@@ -215,12 +233,15 @@ public class DataBaseCreator {
             model.add(sleepID, hasCount, Values.literal(sleepCount));
             model.add(sleepID, resultTime, Values.literal(date, Values.iri("http://www.w3.org/2001/XMLSchema#date")));
         }
+        shaclValidation.validation(model);
+
         connection.begin();
         connection.add(model);
         connection.commit();
+        System.out.println("DailySleep committed");
     }
 
-    public void loadDailyHeartRate(List<List<String>> dailyHeartRateList, RepositoryConnection connection) {
+    public void loadDailyHeartRate(List<List<String>> dailyHeartRateList, RepositoryConnection connection, ShaclValidation shaclValidation) {
         Model model = new TreeModel();
 
         for (List<String> list: dailyHeartRateList) { //list: [userID, date, HeartRate]
@@ -235,12 +256,15 @@ public class DataBaseCreator {
             model.add(heartRateID, hasCount, Values.literal(heartRateCount));
             model.add(heartRateID, resultTime, Values.literal(date, Values.iri("http://www.w3.org/2001/XMLSchema#date")));
         }
+        shaclValidation.validation(model);
+
         connection.begin();
         connection.add(model);
         connection.commit();
+        System.out.println("DailyHeartRate committed");
     }
 
-    public void loadDailyVeryActiveMinutes(List<List<String>> dailyVeryActiveMinutesList, RepositoryConnection connection) {
+    public void loadDailyVeryActiveMinutes(List<List<String>> dailyVeryActiveMinutesList, RepositoryConnection connection, ShaclValidation shaclValidation) {
         Model model = new TreeModel();
 
         for (List<String> list: dailyVeryActiveMinutesList) { //list: [userID, date, VeryActiveMinutes]
@@ -255,12 +279,15 @@ public class DataBaseCreator {
             model.add(VAMinutesID, hasCount, Values.literal(VAMinutesCount));
             model.add(VAMinutesID, resultTime, Values.literal(date, Values.iri("http://www.w3.org/2001/XMLSchema#date")));
         }
+        shaclValidation.validation(model);
+
         connection.begin();
         connection.add(model);
         connection.commit();
+        System.out.println("DailyVeryActiveMinutes committed");
     }
 
-    public void loadDailyFairlyActiveMinutes(List<List<String>> dailyFairlyActiveMinutesList, RepositoryConnection connection) {
+    public void loadDailyFairlyActiveMinutes(List<List<String>> dailyFairlyActiveMinutesList, RepositoryConnection connection, ShaclValidation shaclValidation) {
         Model model = new TreeModel();
 
         for (List<String> list: dailyFairlyActiveMinutesList) { //list: [userID, date, FairlyActiveMinutes]
@@ -275,12 +302,15 @@ public class DataBaseCreator {
             model.add(FAMinutesID, hasCount, Values.literal(FAMinutesCount));
             model.add(FAMinutesID, resultTime, Values.literal(date, Values.iri("http://www.w3.org/2001/XMLSchema#date")));
         }
+        shaclValidation.validation(model);
+
         connection.begin();
         connection.add(model);
         connection.commit();
+        System.out.println("DailyFairlyActiveMinutes committed");
     }
 
-    public void loadDailyLightlyActiveMinutes(List<List<String>> dailyLightlyActiveMinutesList, RepositoryConnection connection) {
+    public void loadDailyLightlyActiveMinutes(List<List<String>> dailyLightlyActiveMinutesList, RepositoryConnection connection, ShaclValidation shaclValidation) {
         Model model = new TreeModel();
 
         for (List<String> list: dailyLightlyActiveMinutesList) { //list: [userID, date, LightlyActiveMinutes]
@@ -295,12 +325,15 @@ public class DataBaseCreator {
             model.add(LAMinutesID, hasCount, Values.literal(LAMinutesCount));
             model.add(LAMinutesID, resultTime, Values.literal(date, Values.iri("http://www.w3.org/2001/XMLSchema#date")));
         }
+        shaclValidation.validation(model);
+
         connection.begin();
         connection.add(model);
         connection.commit();
+        System.out.println("DailyLightlyActiveMinutes committed");
     }
 
-    public void loadDailySedentaryMinutes(List<List<String>> dailySedentaryMinutesList, RepositoryConnection connection) {
+    public void loadDailySedentaryMinutes(List<List<String>> dailySedentaryMinutesList, RepositoryConnection connection, ShaclValidation shaclValidation) {
         Model model = new TreeModel();
 
         for (List<String> list: dailySedentaryMinutesList) { //list: [userID, date, SedentaryMinutes]
@@ -315,12 +348,15 @@ public class DataBaseCreator {
             model.add(SedentaryMinutesID, hasCount, Values.literal(SedentaryMinutesCount));
             model.add(SedentaryMinutesID, resultTime, Values.literal(date, Values.iri("http://www.w3.org/2001/XMLSchema#date")));
         }
+        shaclValidation.validation(model);
+
         connection.begin();
         connection.add(model);
         connection.commit();
+        System.out.println("DailySedentaryMinutes committed");
     }
 
-    public void loadHourlyCalories(List<List<String>> hourlyCaloriesList, RepositoryConnection connection) {
+    public void loadHourlyCalories(List<List<String>> hourlyCaloriesList, RepositoryConnection connection, ShaclValidation shaclValidation) {
         Model model = new TreeModel();
 
         for (List<String> list: hourlyCaloriesList) { //list: [userID, dateTime, calories]
@@ -335,12 +371,15 @@ public class DataBaseCreator {
             model.add(caloriesID, hasCount, Values.literal(caloriesCount));
             model.add(caloriesID, resultTime, Values.literal(dateTime, Values.iri("http://www.w3.org/2001/XMLSchema#dateTime")));
         }
+        shaclValidation.validation(model);
+
         connection.begin();
         connection.add(model);
         connection.commit();
+        System.out.println("HourlyCalories committed");
     }
 
-    public void loadHourlySteps(List<List<String>> hourlyStepsList, RepositoryConnection connection) {
+    public void loadHourlySteps(List<List<String>> hourlyStepsList, RepositoryConnection connection, ShaclValidation shaclValidation) {
         Model model = new TreeModel();
 
         for (List<String> list: hourlyStepsList) { //list: [userID, dateTime, steps]
@@ -355,9 +394,12 @@ public class DataBaseCreator {
             model.add(stepsID, hasCount, Values.literal(stepsCount));
             model.add(stepsID, resultTime, Values.literal(dateTime, Values.iri("http://www.w3.org/2001/XMLSchema#dateTime")));
         }
+        shaclValidation.validation(model);
+
         connection.begin();
         connection.add(model);
         connection.commit();
+        System.out.println("HourlySteps committed");
     }
 
 }
