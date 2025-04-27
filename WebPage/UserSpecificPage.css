@@ -1,0 +1,84 @@
+html, body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #D7D3BF;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px 30px 20px 30px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #D7D3BF;
+}
+
+.active-tab {
+    border-bottom: 1px solid #888;
+    color: #000;
+    background-color: #D7D3BF;
+    padding: 10px 20px 10px 20px;
+    margin: 10px 5px;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none;
+}
+
+.inactive-tab {
+    padding: 10px 20px 10px 20px;
+    margin: 10px 5px;
+    background-color: #D7D3BF;
+    color: #333;
+    text-decoration: none;
+    font-weight: normal;
+    border-radius: 5px 5px 0 0;
+}
+
+.inactive-tab:hover, .active-tab:hover {
+    background-color: #A59D84;
+    color: white;
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
+    background-color: #ECEBDE;
+    justify-content: center;
+    /*position: relative;*/
+}
+
+form {
+    width: fit-content;
+    height: fit-content;
+    padding: 50px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-top: 50px;
+    background-color: #F7F6F2;
+}
+
+.submit-btn {
+    padding: 5px;
+    background-color: #ECEBDE;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 20px auto 0;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #A59D84;
+    color: white;
+}
