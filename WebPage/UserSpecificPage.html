@@ -7,19 +7,48 @@
     <link rel="stylesheet" href="UserSpecificPage.css">
 </head>
 <body>
-    <header>
-        <div class="headerText">
-            <h1>Activity Tracker Dashboard</h1>
+    <div class="top-container">
+        <header>
+            <div class="headerText">
+                <h1>Activity Tracker Dashboard</h1>
+            </div>
+        </header>
+        <div class="menu">
+            <a href="GeneralPage.html" class="inactive-tab">Overview</a>
+            <a href="UserSpecificPage.html" class="active-tab">User Analysis</a>
         </div>
-    </header>
-    <div class="menu">
-        <a href="GeneralPage.html" class="inactive-tab">Overview</a>
-        <a href="UserSpecificPage.html" class="active-tab">User Analysis</a>
     </div>
-    <!-- ΕΔΩ ΘΑ ΜΠΕΙ Η ΦΟΡΜΑ ΚΑΙ ΜΕΤΑΓΕΝΕΣΤΕΡΑ ΤΟ ΚΑΤΑΛΛΗΛΟ ΓΡΑΦΗΜΑ-->
     <div class="main-container">
         <form action="" method="post">
-            <!-- ΣΤΟΙΧΕΙΑ -->
+            <h2 class="form-title">Activity Data Form</h2>
+            <div class="form-group">
+                <label for="userId">Participant ID:</label>
+                <input type="text" id="userId" name="userId" placeholder="Type User ID..." required>
+            </div>
+            <div class="form-group">
+                <label for="category">Data Category:</label>
+                <select id="category" name="category" required>
+                    <option value="" disabled selected>Choose a category...</option>
+                    <option value="Calories">Calories</option>
+                    <option value="Steps">Steps</option>
+                    <option value="Distance">Distance</option>
+                    <option value="HeartRate">Heart Rate</option>
+                    <option value="Sleep">Sleep</option>
+                    <option value="Weight">Weight</option>
+                    <option value="VeryActiveMin">Very Active Minutes</option>
+                    <option value="FairlyActiveMin">Fairly Active Minutes</option>
+                    <option value="LightlyActiveMin">Lightly Active Minutes</option>
+                    <option value="SedentaryMin">Sedentary Minutes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="timeInterval">Time Interval:</label>
+                <select id="timeInterval" name="timeInterval" required>
+                    <option value="" disabled selected>Choose time interval...</option>
+                    <option value="daily">Daily</option>
+                    <option value="hourly">Hourly</option>
+                </select>
+            </div>
             <button type="submit" class="submit-btn">Submit</button>
         </form>
     </div>

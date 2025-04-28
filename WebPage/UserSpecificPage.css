@@ -9,37 +9,47 @@ body {
     flex-direction: column;
 }
 
+.top-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 header {
+    display: flex;
+    flex: 3;
     background-color: #D7D3BF;
+    justify-content: flex-start;
 }
 
 h1 {
     text-align: center;
-    margin: 30px 30px 20px 30px;
+    margin: 0;
+    padding: 31px 50px 31px 50px;
 }
 
 .menu {
     display: flex;
+    flex: 1;
     justify-content: center;
-    position: relative;
     background-color: #D7D3BF;
 }
 
 .active-tab {
-    border-bottom: 1px solid #888;
-    color: #000;
+    border-bottom: 1px solid #888888;
+    color: #000000;
     background-color: #D7D3BF;
     padding: 10px 20px 10px 20px;
-    margin: 10px 5px;
+    margin: 30px 5px;
     border-radius: 5px 5px 0 0;
     text-decoration: none;
 }
 
 .inactive-tab {
     padding: 10px 20px 10px 20px;
-    margin: 10px 5px;
+    margin: 30px 5px;
     background-color: #D7D3BF;
-    color: #333;
+    color: #333333;
     text-decoration: none;
     font-weight: normal;
     border-radius: 5px 5px 0 0;
@@ -62,20 +72,57 @@ form {
     width: fit-content;
     height: fit-content;
     padding: 50px;
-    border: 1px solid;
+    border: 1px solid #3B3030;
     border-radius: 5px;
-    margin-top: 50px;
+    margin-top: 60px;
     background-color: #F7F6F2;
+    box-shadow: 0 2px 25px #664343;
+}
+
+.form-title {
+    margin: 0 20px 30px 20px;
+    text-align: center;
+    color: #272727;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #3B3030;
+}
+
+input, select {
+    font-size: 15px;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: 1px solid #3B3030;
+}
+
+select {
+    color: #393E46;
+}
+
+select:hover {
+    cursor: pointer;
 }
 
 .submit-btn {
-    padding: 5px;
+    padding: 10px 25px;
     background-color: #ECEBDE;
-    border: 1px solid;
+    border: 1px solid #3B3030;
     border-radius: 5px;
     font-size: 16px;
-    margin: 20px auto 0;
+    margin: 30px auto 0;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
 
 .submit-btn:hover {
