@@ -2,10 +2,7 @@ package myproject;
 
 import org.eclipse.rdf4j.common.exception.ValidationException;
 import org.eclipse.rdf4j.model.Model;
-import org.eclipse.rdf4j.model.vocabulary.RDF;
 import org.eclipse.rdf4j.model.vocabulary.RDF4J;
-import org.eclipse.rdf4j.repository.Repository;
-import org.eclipse.rdf4j.repository.RepositoryConnection;
 import org.eclipse.rdf4j.repository.RepositoryException;
 import org.eclipse.rdf4j.repository.sail.SailRepository;
 import org.eclipse.rdf4j.repository.sail.SailRepositoryConnection;
@@ -13,6 +10,7 @@ import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.Rio;
 import org.eclipse.rdf4j.rio.WriterConfig;
 import org.eclipse.rdf4j.rio.helpers.BasicWriterSettings;
+import org.eclipse.rdf4j.sail.inferencer.fc.SchemaCachingRDFSInferencer;
 import org.eclipse.rdf4j.sail.memory.MemoryStore;
 import org.eclipse.rdf4j.sail.shacl.ShaclSail;
 
@@ -22,7 +20,7 @@ import java.io.StringReader;
 public class ShaclValidation {
 
     public void validation(Model model) {
-        ShaclSail shaclSail = new ShaclSail(new MemoryStore());
+        ShaclSail shaclSail = new ShaclSail(new SchemaCachingRDFSInferencer(new MemoryStore()));
         SailRepository repository = new SailRepository(shaclSail);
         repository.init();
 
