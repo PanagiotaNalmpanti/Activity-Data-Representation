@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="basic page layout and style done">
+    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="added a reasoner in ShaclValidation&#10;corrected some values in css files">
+      <change afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPage/GeneralPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/GeneralPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myproject/ShaclValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myproject/ShaclValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745874345639</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="added a reasoner in ShaclValidation&#10;corrected some values in css files">
+      <option name="closed" value="true" />
+      <created>1745946060092</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1745946060092</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -232,6 +240,7 @@
     <MESSAGE value="shacl validation done" />
     <MESSAGE value="web page main template" />
     <MESSAGE value="basic page layout and style done" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic page layout and style done" />
+    <MESSAGE value="added a reasoner in ShaclValidation&#10;corrected some values in css files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a reasoner in ShaclValidation&#10;corrected some values in css files" />
   </component>
 </project>
