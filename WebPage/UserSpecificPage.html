@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width initial-scale=1">
     <title>Activity Tracker Dashboard</title>
     <link rel="stylesheet" href="UserSpecificPage.css">
-    <script src="UserSpecificPage.js" defer=""></script>
 </head>
 <body>
     <div class="top-container">
@@ -20,7 +19,7 @@
         </div>
     </div>
     <div class="main-container">
-        <form action="" method="post">
+        <form action="" id="form">
             <h2 class="form-title">Activity Data Form</h2>
             <div class="form-group">
                 <label for="userId">Participant ID:</label>
@@ -36,10 +35,10 @@
                     <option value="HeartRate">Heart Rate</option>
                     <option value="Sleep">Sleep</option>
                     <option value="Weight">Weight</option>
-                    <option value="VeryActiveMin">Very Active Minutes</option>
-                    <option value="FairlyActiveMin">Fairly Active Minutes</option>
-                    <option value="LightlyActiveMin">Lightly Active Minutes</option>
-                    <option value="SedentaryMin">Sedentary Minutes</option>
+                    <option value="VeryActiveMinutes">Very Active Minutes</option>
+                    <option value="FairlyActiveMinutes">Fairly Active Minutes</option>
+                    <option value="LightlyActiveMinutes">Lightly Active Minutes</option>
+                    <option value="SedentaryMinutes">Sedentary Minutes</option>
                 </select>
             </div>
             <div class="form-group">
@@ -55,5 +54,6 @@
         <div class="chart-container hidden">
         </div>
     </div>
+    <script src="UserSpecificPage.js" defer=""></script>
 </body>
 </html>
