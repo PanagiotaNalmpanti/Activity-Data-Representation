@@ -59,35 +59,17 @@ function afterSubmitEvents() {
             `    ?cat rdf:type ${categValue}.`+
             '}';
 
+        fetch('http://localhost:7200/repositories/ActivityTrackingOntology', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/sparql-query',
+                'Accept': 'application/json'
+            },
+            body: sparqlQuery
+        }).then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.log(error));
 
-//        const response = await fetch("http://localhost:7200/repositories/ActivityTrackingOntology", {
-//            method: 'POST',
-//            headers: {
-//                'Content-type': 'application/sparql-query'
-//            },
-//            body: sparqlQuery
-//        });
-
-//        fetch('http://localhost:3000/repositories/ActivityTrackingOntology', {
-//            method: 'POST',
-//            headers: {
-//                'Content-type': 'application/sparql-query',
-//                'Accept': 'application/json'
-//            },
-//            body: sparqlQuery
-//        }).then(response => response.json())
-//          .then(data => console.log(data))
-//          .catch(error => console.log(error));
-
-        fetch('http://localhost:3000/query', {
-                    method: 'POST',
-                    headers: {
-                        'Content-type': 'application/json'
-                    },
-                    body: JSON.stringify({query: sparqlQuery})
-                }).then(response => response.json())
-                .then(data => console.log(data))
-                .catch(error => console.log(error));
     });
 
 
