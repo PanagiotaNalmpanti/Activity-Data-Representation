@@ -138,15 +138,40 @@ select:disabled {
 }
 
 .chart-container {
-  width: 800px;
-  min-height: 400px;
-  margin: 80px 0 80px 100px;
-  box-shadow: 0 2px 25px #664343;
-  border: 1px solid #3B3030;
-  border-radius: 5px;
-  padding: 20px;
+    position: relative;
+    width: 800px;
+    min-height: 400px;
+    margin: 80px 0 80px 100px;
+    box-shadow: 0 2px 25px #664343;
+    border: 1px solid #3B3030;
+    border-radius: 5px;
+    padding: 20px;
 }
 
 .hidden {
-  display: none;
+    display: none;
+}
+
+.no-data-message {
+    position: absolute;
+    top: 43%;
+    left: 20%;
+    font-size: 18px;
+    color: #272727;
+    border: 1px solid #3B3030;
+    border-radius: 5px;
+    background-color: #54473F;
+    color: white;
+    padding: 10px;
+}
+
+.error-container {
+    text-align: center;
+    background-color: #ECEBDE;
+}
+
+.error-message {
+    font-size: 18px;
+    color: #cc0000;
+    padding-bottom: 30px;
 }

@@ -75,7 +75,10 @@ function afterSubmitEvents() {
             const data = JSON.parse(text);
             chartCreation(data, category);
           })
-          .catch(error => console.log(error));
+          .catch(error => {
+            console.log(error);
+            document.getElementById('error-message').classList.remove('hidden');
+          });
 
     });
 }
@@ -115,6 +118,7 @@ function chartCreation(data, category) {
         });
     }
     else {
+        document.getElementById('no-data-message').classList.remove('hidden');
         chart = new Chart(ctx, {
           type: 'bar',
           data: {

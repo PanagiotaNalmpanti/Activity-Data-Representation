@@ -53,8 +53,13 @@
         </form>
         <div class="chart-container hidden" id="chart-container">
             <canvas id="myChart"></canvas>
+            <div class="no-data-message hidden" id="no-data-message">No data available for this user in this category and time interval.</div>
         </div>
     </div>
+    <div class="error-container">
+        <div class="error-message hidden" id="error-message">An error occurred while trying to connect to the database.<br>Please try again.</div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="UserSpecificPage.js" defer=""></script>
 </body>
