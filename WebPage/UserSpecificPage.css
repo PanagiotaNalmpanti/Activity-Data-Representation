@@ -79,12 +79,6 @@ form {
     margin-top: 60px;
     background-color: #F7F6F2;
     box-shadow: 0 2px 25px #664343;
-    transition: transform 0.5s ease-in-out;
-}
-
-form.slide-out {
-  transform: translateX(-120%);
-  opacity: 0;
 }
 
 .form-title {
@@ -142,22 +136,16 @@ select:disabled {
     background-color: #A59D84;
     color: white;
 }
-/**************MIGHT DELETE****************/
-.chart-container {
-  width: 600px;
-  min-height: 400px;
-  margin-left: 40px;
-  opacity: 0;
-  transform: translateX(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  z-index: 1;
-}
 
-.chart-container.visible {
-  opacity: 1;
-  transform: translateX(0);
+.chart-container {
+  width: 800px;
+  min-height: 400px;
+  margin: 80px 0 80px 100px;
+  box-shadow: 0 2px 25px #664343;
+  border: 1px solid #3B3030;
+  border-radius: 5px;
+  padding: 20px;
 }
-/*****************************************/
 
 .hidden {
   display: none;

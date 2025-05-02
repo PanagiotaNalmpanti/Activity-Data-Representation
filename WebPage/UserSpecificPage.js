@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('form').reset();
     timeIntervalValues();
     afterSubmitEvents();
 });
@@ -9,7 +10,7 @@ function timeIntervalValues() {
 
     category.addEventListener('change', () => {
         const selection = category.value;
-        if (selection === 'Distance' || selection === 'HeartRate' || selection === 'Sleep' ||
+        if (selection === 'Distance' || selection === 'HeartRate' || selection === 'SleepHours' ||
             selection === 'Weight' || selection === 'VeryActiveMinutes' || selection === 'FairlyActiveMinutes' ||
             selection === 'LightlyActiveMinutes' || selection === 'SedentaryMinutes') {
             timeInterval.value = 'daily';
@@ -35,11 +36,13 @@ function afterSubmitEvents() {
         // so in the ontology they are named differently (HCalories / HSteps, DCalories / DSteps).
         // We need to adjust that by putting the corresponding letters before the default value.
         let categValue = category;
+        let t = "daily";
         if (category === 'Calories' || category === 'Steps') {
-            if (timeInterval === 'Hourly') {
+            if (timeInterval === 'hourly') {
                 categValue = 'act:H' + category;
+                t = "hourly";
             }
-            else if (timeInterval === 'Daily') {
+            else if (timeInterval === 'daily') {
                 categValue = 'act:D' + category;
             }
         }
@@ -63,16 +66,74 @@ function afterSubmitEvents() {
             method: 'POST',
             headers: {
                 'Content-type': 'application/sparql-query',
-                'Accept': 'application/json'
+                'Accept': 'application/sparql-results+json'
             },
             body: sparqlQuery
-        }).then(response => response.json())
-          .then(data => console.log(data))
+        }).then(response => response.text())
+          .then(text => {
+            console.log("Raw Response:", text); // Δες τι γυρνάει η βάση
+            const data = JSON.parse(text);
+            chartCreation(data, category);
+          })
           .catch(error => console.log(error));
 
     });
+}
 
+let chart = null;
 
+function chartCreation(data, category) {
+    const bindings = data.results.bindings;
+    const values = bindings.map(row => row.result.value);
+    const dates = bindings.map(row => row.time.value);
 
+    document.getElementById('chart-container').classList.remove('hidden');
+    const ctx = document.getElementById('myChart');
+
+    if (chart !== null) { chart.destroy(); }
+
+    if (bindings.length !== 0) {
+        chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: dates,
+            datasets: [{
+              label: category,
+              data: values,
+              borderWidth: 1,
+              backgroundColor: 'rgba(84, 71, 63, 0.5)',
+              borderColor: 'rgba(84, 71, 63, 1)'
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+    }
+    else {
+        chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: [],
+            datasets: [{
+              label: 'No Data Available',
+              data: [],
+              borderWidth: 1,
+              backgroundColor: '#54473F'
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+    }
 }
 

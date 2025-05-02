@@ -33,7 +33,7 @@
                     <option value="Steps">Steps</option>
                     <option value="Distance">Distance</option>
                     <option value="HeartRate">Heart Rate</option>
-                    <option value="Sleep">Sleep</option>
+                    <option value="SleepHours">Sleep</option>
                     <option value="Weight">Weight</option>
                     <option value="VeryActiveMinutes">Very Active Minutes</option>
                     <option value="FairlyActiveMinutes">Fairly Active Minutes</option>
@@ -51,9 +51,11 @@
             </div>
             <button type="submit" class="submit-btn">Submit</button>
         </form>
-        <div class="chart-container hidden">
+        <div class="chart-container hidden" id="chart-container">
+            <canvas id="myChart"></canvas>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="UserSpecificPage.js" defer=""></script>
 </body>
 </html>

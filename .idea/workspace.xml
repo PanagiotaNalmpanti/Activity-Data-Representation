@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="many additions were done...">
+    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="basic fetch and response done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPage/Server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPage/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPage/package.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746045444876</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="basic fetch and response done">
+      <option name="closed" value="true" />
+      <created>1746125350809</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1746125350809</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -275,6 +282,7 @@
     <MESSAGE value="added a reasoner in ShaclValidation&#10;corrected some values in css files" />
     <MESSAGE value="time interval with JS&#10;div creation for chart" />
     <MESSAGE value="many additions were done..." />
-    <option name="LAST_COMMIT_MESSAGE" value="many additions were done..." />
+    <MESSAGE value="basic fetch and response done" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic fetch and response done" />
   </component>
 </project>
