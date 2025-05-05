@@ -71,7 +71,7 @@ function afterSubmitEvents() {
             body: sparqlQuery
         }).then(response => response.text())
           .then(text => {
-            console.log("Raw Response:", text); // Δες τι γυρνάει η βάση
+            console.log("Data:", text);
             const data = JSON.parse(text);
             chartCreation(data, category);
           })
