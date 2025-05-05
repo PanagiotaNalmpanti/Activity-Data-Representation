@@ -61,8 +61,16 @@ h1 {
 }
 
 .dashboards {
-    display: flex;
     flex: 1;
     background-color: #ECEBDE;
-    /*position: relative;*/
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.chart-container {
+    box-shadow: 0 2px 20px #664343;
+    border: 1px solid #3B3030;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
 }

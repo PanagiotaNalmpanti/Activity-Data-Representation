@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="fetch done, graph for specific user done">
+    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="error message for UserSpecificPage.html">
+      <change afterPath="$PROJECT_DIR$/WebPage/GeneralPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebPage/GeneralPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/GeneralPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebPage/GeneralPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/GeneralPage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746189616819</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="error message for UserSpecificPage.html">
+      <option name="closed" value="true" />
+      <created>1746200287828</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1746200287828</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -292,6 +300,7 @@
     <MESSAGE value="many additions were done..." />
     <MESSAGE value="basic fetch and response done" />
     <MESSAGE value="fetch done, graph for specific user done" />
-    <option name="LAST_COMMIT_MESSAGE" value="fetch done, graph for specific user done" />
+    <MESSAGE value="error message for UserSpecificPage.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="error message for UserSpecificPage.html" />
   </component>
 </project>
