@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="corrections">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebPage/GeneralPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/GeneralPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebPage/GeneralPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/GeneralPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -276,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746467760876</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="corrections">
+      <option name="closed" value="true" />
+      <created>1746547865783</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1746547865783</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="UnknownFeatures">

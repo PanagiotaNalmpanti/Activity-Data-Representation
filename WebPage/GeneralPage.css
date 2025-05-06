@@ -18,7 +18,7 @@ body {
 header {
     display: flex;
     flex: 3;
-    background-color: #D7D3BF;
+    background-color: #91AC8F;
     justify-content: flex-start;
 }
 
@@ -26,19 +26,20 @@ h1 {
     text-align: center;
     margin: 0;
     padding: 31px 50px 31px 80px;
+    color: #121212;
 }
 
 .menu {
     display: flex;
     flex: 1;
     justify-content: center;
-    background-color: #D7D3BF;
+    background-color: #91AC8F;
 }
 
 .active-tab {
     border-bottom: 1px solid #888888;
     color: #000000;
-    background-color: #D7D3BF;
+    background-color: #91AC8F;
     padding: 10px 20px 10px 20px;
     margin: 30px 5px;
     border-radius: 5px 5px 0 0;
@@ -48,7 +49,7 @@ h1 {
 .inactive-tab {
     padding: 10px 20px 10px 20px;
     margin: 30px 5px;
-    background-color: #D7D3BF;
+    background-color: #91AC8F;
     color: #333333;
     text-decoration: none;
     font-weight: normal;
@@ -56,7 +57,7 @@ h1 {
 }
 
 .inactive-tab:hover, .active-tab:hover {
-    background-color: #A59D84;
+    background-color: #66785F;
     color: white;
 }
 
@@ -69,8 +70,9 @@ h1 {
 
 .chart-container {
     box-shadow: 0 2px 20px #664343;
-    border: 1px solid #3B3030;
+    border: 1px solid #1A3636;
     border-radius: 5px;
     padding: 20px;
     margin: 20px;
+    background-color: #F7F6F2;
 }

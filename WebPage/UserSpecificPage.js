@@ -107,7 +107,7 @@ function chartCreation(data, category) {
               label: category,
               data: values,
               borderWidth: 1,
-              backgroundColor: 'rgba(84, 71, 63, 0.5)',
+              backgroundColor: 'rgba(75, 89, 69, 0.5)',
               borderColor: 'rgba(84, 71, 63, 1)'
             }]
           },
@@ -130,7 +130,7 @@ function chartCreation(data, category) {
               label: 'No Data Available',
               data: [],
               borderWidth: 1,
-              backgroundColor: '#54473F'
+              backgroundColor: '#4B5945'
             }]
           },
           options: {
