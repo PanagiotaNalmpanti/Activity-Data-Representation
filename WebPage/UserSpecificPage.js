@@ -93,7 +93,10 @@ function chartCreation(data, category) {
     document.getElementById('chart-container').classList.remove('hidden');
     const ctx = document.getElementById('myChart');
 
-    if (chart !== null) { chart.destroy(); }
+    if (chart !== null) {
+        chart.destroy();
+        document.getElementById('no-data-message').classList.add('hidden');
+    }
 
     if (bindings.length !== 0) {
         chart = new Chart(ctx, {

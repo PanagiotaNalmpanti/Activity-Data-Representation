@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="basic grid template of general page&#10;basic architecture of js page">
+    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="corrections">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -267,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746467655708</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="corrections">
+      <option name="closed" value="true" />
+      <created>1746467760876</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1746467760876</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -294,7 +303,6 @@
     <MESSAGE value="ontology corrections" />
     <MESSAGE value="load daily steps done" />
     <MESSAGE value="all loaded on GraphDB" />
-    <MESSAGE value="corrections" />
     <MESSAGE value="building shacl validation" />
     <MESSAGE value="shacl rules done&#10;dbCreator corrections" />
     <MESSAGE value="shacl validation done" />
@@ -307,6 +315,7 @@
     <MESSAGE value="fetch done, graph for specific user done" />
     <MESSAGE value="error message for UserSpecificPage.html" />
     <MESSAGE value="basic grid template of general page&#10;basic architecture of js page" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic grid template of general page&#10;basic architecture of js page" />
+    <MESSAGE value="corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrections" />
   </component>
 </project>
