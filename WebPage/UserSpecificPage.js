@@ -107,7 +107,7 @@ function chartCreation(data, category) {
               label: category,
               data: values,
               borderWidth: 1,
-              backgroundColor: 'rgba(75, 89, 69, 0.5)',
+              backgroundColor: 'rgba(102, 120, 95, 0.5)',
               borderColor: 'rgba(84, 71, 63, 1)'
             }]
           },

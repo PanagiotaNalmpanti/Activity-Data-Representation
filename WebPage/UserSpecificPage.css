@@ -18,7 +18,7 @@ body {
 header {
     display: flex;
     flex: 3;
-    background-color: #91AC8F;
+    background-color: #86A788;
     justify-content: flex-start;
 }
 
@@ -33,13 +33,13 @@ h1 {
     display: flex;
     flex: 1;
     justify-content: center;
-    background-color: #91AC8F; /*#D7D3BF;*/
+    background-color: #86A788; /*#D7D3BF;*/
 }
 
 .active-tab {
     border-bottom: 1px solid #888888;
     color: #000000;
-    background-color: #91AC8F;
+    background-color: #86A788;
     padding: 10px 20px 10px 20px;
     margin: 30px 5px;
     border-radius: 5px 5px 0 0;
@@ -49,7 +49,7 @@ h1 {
 .inactive-tab {
     padding: 10px 20px 10px 20px;
     margin: 30px 5px;
-    background-color: #91AC8F;
+    background-color: #86A788;
     color: #333333;
     text-decoration: none;
     font-weight: normal;

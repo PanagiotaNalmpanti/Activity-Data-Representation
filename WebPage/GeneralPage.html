@@ -18,7 +18,10 @@
             <a href="UserSpecificPage.html" class="inactive-tab">User Analysis</a>
         </div>
     </div>
-    <div class="dashboards">
+    <div class="error-container">
+        <div class="error-message hidden" id="error-message">An error occurred while trying to connect to the database.<br>Please try again.</div>
+    </div>
+    <div class="dashboards-top">
         <div class="chart-container">
             <canvas id="chart1"></canvas>
         </div>
@@ -28,17 +31,15 @@
         <div class="chart-container">
             <canvas id="chart3"></canvas>
         </div>
+    </div>
+    <div class="dashboards-bottom">
         <div class="chart-container">
             <canvas id="chart4"></canvas>
         </div>
         <div class="chart-container">
             <canvas id="chart5"></canvas>
         </div>
-        <div class="chart-container">
-            <canvas id="chart6"></canvas>
-        </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="GeneralPage.js" defer=""></script>
 </body>

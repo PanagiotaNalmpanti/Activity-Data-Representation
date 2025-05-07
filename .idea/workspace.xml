@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="corrections">
+    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="first chart done&#10;change of colors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebPage/GeneralPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/GeneralPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebPage/GeneralPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/GeneralPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebPage/GeneralPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/GeneralPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.js" afterDir="false" />
@@ -287,7 +288,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746547865783</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="first chart done&#10;change of colors">
+      <option name="closed" value="true" />
+      <created>1746563341497</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1746563341497</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -327,6 +336,7 @@
     <MESSAGE value="error message for UserSpecificPage.html" />
     <MESSAGE value="basic grid template of general page&#10;basic architecture of js page" />
     <MESSAGE value="corrections" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrections" />
+    <MESSAGE value="first chart done&#10;change of colors" />
+    <option name="LAST_COMMIT_MESSAGE" value="first chart done&#10;change of colors" />
   </component>
 </project>

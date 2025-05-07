@@ -61,18 +61,46 @@ h1 {
     color: white;
 }
 
-.dashboards {
+.dashboards-top, .dashboards-bottom {
     flex: 1;
     background-color: #ECEBDE;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.chart-container {
+.dashboards-top {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.dashboards-bottom {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.chart-container, .chart-container {
     box-shadow: 0 2px 20px #664343;
     border: 1px solid #1A3636;
     border-radius: 5px;
     padding: 20px;
     margin: 20px;
     background-color: #F7F6F2;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+}
+
+.error-container {
+    text-align: center;
+    background-color: #ECEBDE;
+}
+
+.error-message {
+    font-size: 18px;
+    color: #cc0000;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
 }
