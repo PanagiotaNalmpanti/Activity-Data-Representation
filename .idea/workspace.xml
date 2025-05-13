@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="first chart done&#10;change of colors">
+    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="2-3-4-5 charts of the general page done&#10;colors done&#10;error message done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPage/GeneralPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/GeneralPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPage/GeneralPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/GeneralPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebPage/GeneralPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/GeneralPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPage/UserSpecificPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/UserSpecificPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myproject/DataBaseCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myproject/DataBaseCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ActivityTrackingOntology.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ActivityTrackingOntology.ttl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +294,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746563341497</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="2-3-4-5 charts of the general page done&#10;colors done&#10;error message done">
+      <option name="closed" value="true" />
+      <created>1746631747534</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1746631747534</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -337,6 +343,7 @@
     <MESSAGE value="basic grid template of general page&#10;basic architecture of js page" />
     <MESSAGE value="corrections" />
     <MESSAGE value="first chart done&#10;change of colors" />
-    <option name="LAST_COMMIT_MESSAGE" value="first chart done&#10;change of colors" />
+    <MESSAGE value="2-3-4-5 charts of the general page done&#10;colors done&#10;error message done" />
+    <option name="LAST_COMMIT_MESSAGE" value="2-3-4-5 charts of the general page done&#10;colors done&#10;error message done" />
   </component>
 </project>

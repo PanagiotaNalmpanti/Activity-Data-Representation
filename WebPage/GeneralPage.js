@@ -259,7 +259,7 @@ function thirdChart(data) {
     const chart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: ['50-60', '60-70', '70-80', '80-90'],
+            labels: ['50-60bpm', '60-70bpm', '70-80bpm', '80-90bpm'],
             datasets: [{
                 label: '%',
                 data: data,

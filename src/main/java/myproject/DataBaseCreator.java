@@ -43,9 +43,7 @@ public class DataBaseCreator {
     IRI Weight = Values.iri(act+"Weight");
     IRI HCalories = Values.iri(act+"HCalories");
     IRI HSteps = Values.iri(act+"HSteps");
-    IRI Sensor = Values.iri(act+"Sensor");
     IRI isFeatureOfInterestOf = Values.iri(sosa+"isFeatureOfInterestOf");
-    IRI madeBySensor = Values.iri(sosa+"madeBySensor");
     IRI observedProperty = Values.iri(sosa+"observedProperty");
     IRI hasCount = Values.iri(act+"hasCount");
     IRI resultTime = Values.iri(sosa+"resultTime");
@@ -88,13 +86,6 @@ public class DataBaseCreator {
         Set<String> declaredIDs = fileProcessor.getDeclaredIDs();
 
         shaclValidation = new ShaclValidation();
-
-        //loading general data
-        Model model = new TreeModel();
-        model.add(ActivityTracker, RDF.TYPE, Sensor);
-        connection.begin();
-        connection.add(model);
-        connection.commit();
 
         //loading specific data
         loadUserIDs(declaredIDs, connection, shaclValidation);
