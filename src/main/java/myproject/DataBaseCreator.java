@@ -47,7 +47,6 @@ public class DataBaseCreator {
     IRI observedProperty = Values.iri(sosa+"observedProperty");
     IRI hasCount = Values.iri(act+"hasCount");
     IRI resultTime = Values.iri(sosa+"resultTime");
-    IRI ActivityTracker = Values.iri(act+"ActivityTracker");
 
 
 

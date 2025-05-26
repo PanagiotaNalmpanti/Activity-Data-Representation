@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="2-3-4-5 charts of the general page done&#10;colors done&#10;error message done">
+    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="corrections (ontology + webpage)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebPage/GeneralPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/GeneralPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/myproject/DataBaseCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myproject/DataBaseCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ActivityTrackingOntology.ttl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ActivityTrackingOntology.ttl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746631747534</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="corrections (ontology + webpage)">
+      <option name="closed" value="true" />
+      <created>1747172707201</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1747172707201</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -344,6 +350,7 @@
     <MESSAGE value="corrections" />
     <MESSAGE value="first chart done&#10;change of colors" />
     <MESSAGE value="2-3-4-5 charts of the general page done&#10;colors done&#10;error message done" />
-    <option name="LAST_COMMIT_MESSAGE" value="2-3-4-5 charts of the general page done&#10;colors done&#10;error message done" />
+    <MESSAGE value="corrections (ontology + webpage)" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrections (ontology + webpage)" />
   </component>
 </project>
