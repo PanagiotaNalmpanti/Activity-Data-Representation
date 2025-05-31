@@ -272,7 +272,7 @@ function thirdChart(data) {
             plugins: {
                 title: {
                     display: true,
-                    text: "User Percentage by HeartRate range - 2024"
+                    text: "User Percentage by Heart Rate range - 2024"
                 }
             }
         }

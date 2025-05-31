@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="corrections (ontology + webpage)">
+    <list default="true" id="1f83e280-3b79-4f33-a032-68c0f6b9b095" name="Changes" comment="corrections">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myproject/DataBaseCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myproject/DataBaseCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebPage/GeneralPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebPage/GeneralPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +308,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747172707201</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="corrections">
+      <option name="closed" value="true" />
+      <created>1748285634729</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1748285634729</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -347,10 +355,10 @@
     <MESSAGE value="fetch done, graph for specific user done" />
     <MESSAGE value="error message for UserSpecificPage.html" />
     <MESSAGE value="basic grid template of general page&#10;basic architecture of js page" />
-    <MESSAGE value="corrections" />
     <MESSAGE value="first chart done&#10;change of colors" />
     <MESSAGE value="2-3-4-5 charts of the general page done&#10;colors done&#10;error message done" />
     <MESSAGE value="corrections (ontology + webpage)" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrections (ontology + webpage)" />
+    <MESSAGE value="corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrections" />
   </component>
 </project>
